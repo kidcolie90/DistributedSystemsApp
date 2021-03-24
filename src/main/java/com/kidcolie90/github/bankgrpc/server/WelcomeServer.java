@@ -11,6 +11,7 @@ public class WelcomeServer {
         System.out.println("Hi, Welcome to the gRPC Bank");
 
         Server server = ServerBuilder.forPort(50051)
+                .addService(new GreetServiceImpl())
                 .build(); //builing server on port 50051
 
         server.start();
