@@ -29,6 +29,16 @@ public final class Greet {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_greet_GreetResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_greet_PromoStreamRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_greet_PromoStreamRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_greet_PromoStreamResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_greet_PromoStreamResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -41,10 +51,19 @@ public final class Greet {
       "\n\021Greet/greet.proto\022\005greet\"/\n\010Greeting\022\021" +
       "\n\tfirstName\030\001 \001(\t\022\020\n\010lastName\030\002 \001(\t\"1\n\014G" +
       "reetRequest\022!\n\010greeting\030\001 \001(\0132\017.greet.Gr" +
-      "eeting\"\037\n\rGreetResponse\022\016\n\006result\030\001 \001(\t2" +
-      "D\n\014GreetService\0224\n\005Greet\022\023.greet.GreetRe" +
-      "quest\032\024.greet.GreetResponse\"\000B\023\n\017com.pro" +
-      "to.greetP\001b\006proto3"
+      "eeting\"\037\n\rGreetResponse\022\016\n\006result\030\001 \001(\t\"" +
+      "\204\001\n\022PromoStreamRequest\022\016\n\006promo1\030\001 \001(\t\022\016" +
+      "\n\006promo2\030\002 \001(\t\022\016\n\006promo3\030\003 \001(\t\022\016\n\006promo4" +
+      "\030\004 \001(\t\022\016\n\006promo5\030\005 \001(\t\022\016\n\006promo6\030\006 \001(\t\022\016" +
+      "\n\006promo7\030\007 \001(\t\"\205\001\n\023PromoStreamResponse\022\016" +
+      "\n\006promo1\030\001 \001(\t\022\016\n\006promo2\030\002 \001(\t\022\016\n\006promo3" +
+      "\030\003 \001(\t\022\016\n\006promo4\030\004 \001(\t\022\016\n\006promo5\030\005 \001(\t\022\016" +
+      "\n\006promo6\030\006 \001(\t\022\016\n\006promo7\030\007 \001(\t2\216\001\n\014Greet" +
+      "Service\0224\n\005Greet\022\023.greet.GreetRequest\032\024." +
+      "greet.GreetResponse\"\000\022H\n\013PromoStream\022\031.g" +
+      "reet.PromoStreamRequest\032\032.greet.PromoStr" +
+      "eamResponse\"\0000\001B\023\n\017com.proto.greetP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -68,6 +87,18 @@ public final class Greet {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_greet_GreetResponse_descriptor,
         new java.lang.String[] { "Result", });
+    internal_static_greet_PromoStreamRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_greet_PromoStreamRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_greet_PromoStreamRequest_descriptor,
+        new java.lang.String[] { "Promo1", "Promo2", "Promo3", "Promo4", "Promo5", "Promo6", "Promo7", });
+    internal_static_greet_PromoStreamResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_greet_PromoStreamResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_greet_PromoStreamResponse_descriptor,
+        new java.lang.String[] { "Promo1", "Promo2", "Promo3", "Promo4", "Promo5", "Promo6", "Promo7", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

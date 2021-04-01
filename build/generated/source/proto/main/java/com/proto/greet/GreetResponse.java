@@ -90,6 +90,10 @@ private static final long serialVersionUID = 0L;
   public static final int RESULT_FIELD_NUMBER = 1;
   private volatile java.lang.Object result_;
   /**
+   * <pre>
+   *will return the persons name in unary api just a basic greeting
+   * </pre>
+   *
    * <code>string result = 1;</code>
    * @return The result.
    */
@@ -107,6 +111,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   *will return the persons name in unary api just a basic greeting
+   * </pre>
+   *
    * <code>string result = 1;</code>
    * @return The bytes for result.
    */
@@ -429,6 +437,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object result_ = "";
     /**
+     * <pre>
+     *will return the persons name in unary api just a basic greeting
+     * </pre>
+     *
      * <code>string result = 1;</code>
      * @return The result.
      */
@@ -445,6 +457,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *will return the persons name in unary api just a basic greeting
+     * </pre>
+     *
      * <code>string result = 1;</code>
      * @return The bytes for result.
      */
@@ -462,6 +478,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *will return the persons name in unary api just a basic greeting
+     * </pre>
+     *
      * <code>string result = 1;</code>
      * @param value The result to set.
      * @return This builder for chaining.
@@ -477,6 +497,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *will return the persons name in unary api just a basic greeting
+     * </pre>
+     *
      * <code>string result = 1;</code>
      * @return This builder for chaining.
      */
@@ -487,6 +511,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *will return the persons name in unary api just a basic greeting
+     * </pre>
+     *
      * <code>string result = 1;</code>
      * @param value The bytes for result to set.
      * @return This builder for chaining.

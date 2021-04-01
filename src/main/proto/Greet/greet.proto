@@ -18,12 +18,38 @@ message GreetRequest{
 }
 
 message GreetResponse{
-  string result =1;
+  string result =1; //will return the persons name in unary api just a basic greeting
+
 }
 
-service GreetService{ //first service, will be unary API
+message PromoStreamRequest{
+
+  string promo1 =1; //promos will be used in server streaming as part of greet service to advertise bank promotions
+  string promo2 =2;
+  string promo3 =3;
+  string promo4 =4;
+  string promo5 =5;
+  string promo6 =6;
+  string promo7 =7;
+
+
+}message PromoStreamResponse{
+
+  string promo1 =1; //promos will be used in server streaming as part of greet service to advertise bank promotions
+  string promo2 =2;
+  string promo3 =3;
+  string promo4 =4;
+  string promo5 =5;
+  string promo6 =6;
+  string promo7 =7;
+
+
+}
+service GreetService{ //first service, will be unary API that will ask the users name and greet them
 
   rpc Greet(GreetRequest) returns (GreetResponse) {};
+
+  rpc PromoStream (PromoStreamRequest) returns (stream PromoStreamResponse) {};
 
 
 }

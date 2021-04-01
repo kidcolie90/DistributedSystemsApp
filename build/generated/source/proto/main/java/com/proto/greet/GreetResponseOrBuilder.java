@@ -8,11 +8,19 @@ public interface GreetResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   *will return the persons name in unary api just a basic greeting
+   * </pre>
+   *
    * <code>string result = 1;</code>
    * @return The result.
    */
   java.lang.String getResult();
   /**
+   * <pre>
+   *will return the persons name in unary api just a basic greeting
+   * </pre>
+   *
    * <code>string result = 1;</code>
    * @return The bytes for result.
    */

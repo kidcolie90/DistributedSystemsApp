@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- *first service, will be unary API
+ *first service, will be unary API that will ask the users name and greet them
  * </pre>
  */
 @javax.annotation.Generated(
@@ -46,6 +46,37 @@ public final class GreetServiceGrpc {
       }
     }
     return getGreetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.proto.greet.PromoStreamRequest,
+      com.proto.greet.PromoStreamResponse> getPromoStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PromoStream",
+      requestType = com.proto.greet.PromoStreamRequest.class,
+      responseType = com.proto.greet.PromoStreamResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.greet.PromoStreamRequest,
+      com.proto.greet.PromoStreamResponse> getPromoStreamMethod() {
+    io.grpc.MethodDescriptor<com.proto.greet.PromoStreamRequest, com.proto.greet.PromoStreamResponse> getPromoStreamMethod;
+    if ((getPromoStreamMethod = GreetServiceGrpc.getPromoStreamMethod) == null) {
+      synchronized (GreetServiceGrpc.class) {
+        if ((getPromoStreamMethod = GreetServiceGrpc.getPromoStreamMethod) == null) {
+          GreetServiceGrpc.getPromoStreamMethod = getPromoStreamMethod =
+              io.grpc.MethodDescriptor.<com.proto.greet.PromoStreamRequest, com.proto.greet.PromoStreamResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PromoStream"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.greet.PromoStreamRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.greet.PromoStreamResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new GreetServiceMethodDescriptorSupplier("PromoStream"))
+              .build();
+        }
+      }
+    }
+    return getPromoStreamMethod;
   }
 
   /**
@@ -94,7 +125,7 @@ public final class GreetServiceGrpc {
 
   /**
    * <pre>
-   *first service, will be unary API
+   *first service, will be unary API that will ask the users name and greet them
    * </pre>
    */
   public static abstract class GreetServiceImplBase implements io.grpc.BindableService {
@@ -106,6 +137,13 @@ public final class GreetServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGreetMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void promoStream(com.proto.greet.PromoStreamRequest request,
+        io.grpc.stub.StreamObserver<com.proto.greet.PromoStreamResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPromoStreamMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -115,13 +153,20 @@ public final class GreetServiceGrpc {
                 com.proto.greet.GreetRequest,
                 com.proto.greet.GreetResponse>(
                   this, METHODID_GREET)))
+          .addMethod(
+            getPromoStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+              new MethodHandlers<
+                com.proto.greet.PromoStreamRequest,
+                com.proto.greet.PromoStreamResponse>(
+                  this, METHODID_PROMO_STREAM)))
           .build();
     }
   }
 
   /**
    * <pre>
-   *first service, will be unary API
+   *first service, will be unary API that will ask the users name and greet them
    * </pre>
    */
   public static final class GreetServiceStub extends io.grpc.stub.AbstractAsyncStub<GreetServiceStub> {
@@ -143,11 +188,19 @@ public final class GreetServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGreetMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void promoStream(com.proto.greet.PromoStreamRequest request,
+        io.grpc.stub.StreamObserver<com.proto.greet.PromoStreamResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getPromoStreamMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * <pre>
-   *first service, will be unary API
+   *first service, will be unary API that will ask the users name and greet them
    * </pre>
    */
   public static final class GreetServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<GreetServiceBlockingStub> {
@@ -168,11 +221,19 @@ public final class GreetServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGreetMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public java.util.Iterator<com.proto.greet.PromoStreamResponse> promoStream(
+        com.proto.greet.PromoStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getPromoStreamMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    * <pre>
-   *first service, will be unary API
+   *first service, will be unary API that will ask the users name and greet them
    * </pre>
    */
   public static final class GreetServiceFutureStub extends io.grpc.stub.AbstractFutureStub<GreetServiceFutureStub> {
@@ -197,6 +258,7 @@ public final class GreetServiceGrpc {
   }
 
   private static final int METHODID_GREET = 0;
+  private static final int METHODID_PROMO_STREAM = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -218,6 +280,10 @@ public final class GreetServiceGrpc {
         case METHODID_GREET:
           serviceImpl.greet((com.proto.greet.GreetRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.greet.GreetResponse>) responseObserver);
+          break;
+        case METHODID_PROMO_STREAM:
+          serviceImpl.promoStream((com.proto.greet.PromoStreamRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.greet.PromoStreamResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -281,6 +347,7 @@ public final class GreetServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new GreetServiceFileDescriptorSupplier())
               .addMethod(getGreetMethod())
+              .addMethod(getPromoStreamMethod())
               .build();
         }
       }

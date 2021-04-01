@@ -5,13 +5,14 @@ import io.grpc.ServerBuilder;
 
 import java.io.IOException;
 
-public class WelcomeServer {
+public class GreetingServer {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Hi, Welcome to the gRPC Bank");
 
         Server server = ServerBuilder.forPort(50051)
-                .addService(new GreetServiceImpl())
+                .addService(new GreetServiceImpl() //service implemented on greetserviceimpl is added on server here
+                )
                 .build(); //builing server on port 50051
 
         server.start();
