@@ -1,0 +1,39 @@
+syntax="proto3";
+
+
+///protofile for client streaming, user will send account information to client
+
+option java_package = "com.proto.account";
+option java_multiple_files = true;
+
+message AccountInfo{
+
+  string name= 1;
+  string type= 2;
+  string address= 3;
+  int32 age=4;
+}
+
+message AccountRequest{ //account request contains account information
+
+  AccountInfo accountInfo=1;
+  string name= 2;
+  string type= 3;
+  string address= 4;
+  int32 age=5;
+
+
+
+}
+
+message AccountResponse{ //response returns a string to state account has been opened
+
+ string Result=1;
+
+}
+
+service OpenAccount{ //open account service : account rpc sends an  account request and returns a the account response
+
+  rpc account (AccountRequest) returns (AccountResponse) {};
+
+}

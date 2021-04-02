@@ -49,7 +49,7 @@ service GreetService{ //first service, will be unary API that will ask the users
 
   rpc Greet(GreetRequest) returns (GreetResponse) {};
 
-  rpc PromoStream (PromoStreamRequest) returns (stream PromoStreamResponse) {};
+  rpc PromoStream (PromoStreamRequest) returns (stream PromoStreamResponse) {}; //within the greet service but should be second service to display banks promotions
 
 
 }
