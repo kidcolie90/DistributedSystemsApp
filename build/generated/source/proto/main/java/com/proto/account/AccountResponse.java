@@ -80,13 +80,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.proto.account.Account.internal_static_AccountResponse_descriptor;
+    return com.proto.account.Account.internal_static_MultiAccountResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.proto.account.Account.internal_static_AccountResponse_fieldAccessorTable
+    return com.proto.account.Account.internal_static_MultiAccountResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.proto.account.AccountResponse.class, com.proto.account.AccountResponse.Builder.class);
   }
@@ -296,13 +296,13 @@ private static final long serialVersionUID = 0L;
       com.proto.account.AccountResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.proto.account.Account.internal_static_AccountResponse_descriptor;
+      return com.proto.account.Account.internal_static_MultiAccountResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.proto.account.Account.internal_static_AccountResponse_fieldAccessorTable
+      return com.proto.account.Account.internal_static_MultiAccountResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.proto.account.AccountResponse.class, com.proto.account.AccountResponse.Builder.class);
     }
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.proto.account.Account.internal_static_AccountResponse_descriptor;
+      return com.proto.account.Account.internal_static_MultiAccountResponse_descriptor;
     }
 
     @java.lang.Override

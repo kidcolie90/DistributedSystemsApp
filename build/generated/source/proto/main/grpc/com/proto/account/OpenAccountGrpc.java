@@ -17,35 +17,35 @@ public final class OpenAccountGrpc {
   public static final String SERVICE_NAME = "OpenAccount";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.proto.account.AccountRequest,
-      com.proto.account.AccountResponse> getAccountMethod;
+  private static volatile io.grpc.MethodDescriptor<com.proto.account.MultiAccountRequest,
+      com.proto.account.MultiAccountResponse> getMultiAccountMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "account",
-      requestType = com.proto.account.AccountRequest.class,
-      responseType = com.proto.account.AccountResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.proto.account.AccountRequest,
-      com.proto.account.AccountResponse> getAccountMethod() {
-    io.grpc.MethodDescriptor<com.proto.account.AccountRequest, com.proto.account.AccountResponse> getAccountMethod;
-    if ((getAccountMethod = OpenAccountGrpc.getAccountMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "MultiAccount",
+      requestType = com.proto.account.MultiAccountRequest.class,
+      responseType = com.proto.account.MultiAccountResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.account.MultiAccountRequest,
+      com.proto.account.MultiAccountResponse> getMultiAccountMethod() {
+    io.grpc.MethodDescriptor<com.proto.account.MultiAccountRequest, com.proto.account.MultiAccountResponse> getMultiAccountMethod;
+    if ((getMultiAccountMethod = OpenAccountGrpc.getMultiAccountMethod) == null) {
       synchronized (OpenAccountGrpc.class) {
-        if ((getAccountMethod = OpenAccountGrpc.getAccountMethod) == null) {
-          OpenAccountGrpc.getAccountMethod = getAccountMethod =
-              io.grpc.MethodDescriptor.<com.proto.account.AccountRequest, com.proto.account.AccountResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "account"))
+        if ((getMultiAccountMethod = OpenAccountGrpc.getMultiAccountMethod) == null) {
+          OpenAccountGrpc.getMultiAccountMethod = getMultiAccountMethod =
+              io.grpc.MethodDescriptor.<com.proto.account.MultiAccountRequest, com.proto.account.MultiAccountResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MultiAccount"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.account.AccountRequest.getDefaultInstance()))
+                  com.proto.account.MultiAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.account.AccountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new OpenAccountMethodDescriptorSupplier("account"))
+                  com.proto.account.MultiAccountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new OpenAccountMethodDescriptorSupplier("MultiAccount"))
               .build();
         }
       }
     }
-    return getAccountMethod;
+    return getMultiAccountMethod;
   }
 
   /**
@@ -101,20 +101,20 @@ public final class OpenAccountGrpc {
 
     /**
      */
-    public void account(com.proto.account.AccountRequest request,
-        io.grpc.stub.StreamObserver<com.proto.account.AccountResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAccountMethod(), responseObserver);
+    public io.grpc.stub.StreamObserver<com.proto.account.MultiAccountRequest> multiAccount(
+        io.grpc.stub.StreamObserver<com.proto.account.MultiAccountResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getMultiAccountMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getAccountMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
+            getMultiAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
               new MethodHandlers<
-                com.proto.account.AccountRequest,
-                com.proto.account.AccountResponse>(
-                  this, METHODID_ACCOUNT)))
+                com.proto.account.MultiAccountRequest,
+                com.proto.account.MultiAccountResponse>(
+                  this, METHODID_MULTI_ACCOUNT)))
           .build();
     }
   }
@@ -138,10 +138,10 @@ public final class OpenAccountGrpc {
 
     /**
      */
-    public void account(com.proto.account.AccountRequest request,
-        io.grpc.stub.StreamObserver<com.proto.account.AccountResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getAccountMethod(), getCallOptions()), request, responseObserver);
+    public io.grpc.stub.StreamObserver<com.proto.account.MultiAccountRequest> multiAccount(
+        io.grpc.stub.StreamObserver<com.proto.account.MultiAccountResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getMultiAccountMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -161,13 +161,6 @@ public final class OpenAccountGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new OpenAccountBlockingStub(channel, callOptions);
     }
-
-    /**
-     */
-    public com.proto.account.AccountResponse account(com.proto.account.AccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAccountMethod(), getCallOptions(), request);
-    }
   }
 
   /**
@@ -186,17 +179,9 @@ public final class OpenAccountGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new OpenAccountFutureStub(channel, callOptions);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.proto.account.AccountResponse> account(
-        com.proto.account.AccountRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getAccountMethod(), getCallOptions()), request);
-    }
   }
 
-  private static final int METHODID_ACCOUNT = 0;
+  private static final int METHODID_MULTI_ACCOUNT = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -215,10 +200,6 @@ public final class OpenAccountGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_ACCOUNT:
-          serviceImpl.account((com.proto.account.AccountRequest) request,
-              (io.grpc.stub.StreamObserver<com.proto.account.AccountResponse>) responseObserver);
-          break;
         default:
           throw new AssertionError();
       }
@@ -229,6 +210,9 @@ public final class OpenAccountGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_MULTI_ACCOUNT:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.multiAccount(
+              (io.grpc.stub.StreamObserver<com.proto.account.MultiAccountResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -280,7 +264,7 @@ public final class OpenAccountGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new OpenAccountFileDescriptorSupplier())
-              .addMethod(getAccountMethod())
+              .addMethod(getMultiAccountMethod())
               .build();
         }
       }

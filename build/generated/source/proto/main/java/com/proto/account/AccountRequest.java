@@ -3,6 +3,8 @@
 
 package com.proto.account;
 
+import com.google.protobuf.Descriptors;
+
 /**
  * <pre>
  *account request contains account information
@@ -20,9 +22,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AccountRequest() {
-    name_ = "";
-    type_ = "";
-    address_ = "";
   }
 
   @java.lang.Override
@@ -68,29 +67,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            type_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            address_ = s;
-            break;
-          }
-          case 40: {
-
-            age_ = input.readInt32();
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -110,15 +86,15 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
+  public static final Descriptors.Descriptor
       getDescriptor() {
-    return com.proto.account.Account.internal_static_AccountRequest_descriptor;
+    return Account.internal_static_MultiAccountRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.proto.account.Account.internal_static_AccountRequest_fieldAccessorTable
+    return com.proto.account.Account.internal_static_MultiAccountRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.proto.account.AccountRequest.class, com.proto.account.AccountRequest.Builder.class);
   }
@@ -149,131 +125,6 @@ private static final long serialVersionUID = 0L;
     return getAccountInfo();
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
-  /**
-   * <code>string name = 2;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object type_;
-  /**
-   * <code>string type = 3;</code>
-   * @return The type.
-   */
-  @java.lang.Override
-  public java.lang.String getType() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      type_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string type = 3;</code>
-   * @return The bytes for type.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      type_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ADDRESS_FIELD_NUMBER = 4;
-  private volatile java.lang.Object address_;
-  /**
-   * <code>string address = 4;</code>
-   * @return The address.
-   */
-  @java.lang.Override
-  public java.lang.String getAddress() {
-    java.lang.Object ref = address_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      address_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string address = 4;</code>
-   * @return The bytes for address.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getAddressBytes() {
-    java.lang.Object ref = address_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      address_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int AGE_FIELD_NUMBER = 5;
-  private int age_;
-  /**
-   * <code>int32 age = 5;</code>
-   * @return The age.
-   */
-  @java.lang.Override
-  public int getAge() {
-    return age_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -291,18 +142,6 @@ private static final long serialVersionUID = 0L;
     if (accountInfo_ != null) {
       output.writeMessage(1, getAccountInfo());
     }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
-    }
-    if (!getAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, address_);
-    }
-    if (age_ != 0) {
-      output.writeInt32(5, age_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -315,19 +154,6 @@ private static final long serialVersionUID = 0L;
     if (accountInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getAccountInfo());
-    }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
-    }
-    if (!getAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, address_);
-    }
-    if (age_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, age_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -349,14 +175,6 @@ private static final long serialVersionUID = 0L;
       if (!getAccountInfo()
           .equals(other.getAccountInfo())) return false;
     }
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getType()
-        .equals(other.getType())) return false;
-    if (!getAddress()
-        .equals(other.getAddress())) return false;
-    if (getAge()
-        != other.getAge()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -372,14 +190,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ACCOUNTINFO_FIELD_NUMBER;
       hash = (53 * hash) + getAccountInfo().hashCode();
     }
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType().hashCode();
-    hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getAddress().hashCode();
-    hash = (37 * hash) + AGE_FIELD_NUMBER;
-    hash = (53 * hash) + getAge();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -488,13 +298,13 @@ private static final long serialVersionUID = 0L;
       com.proto.account.AccountRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.proto.account.Account.internal_static_AccountRequest_descriptor;
+      return com.proto.account.Account.internal_static_MultiAccountRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.proto.account.Account.internal_static_AccountRequest_fieldAccessorTable
+      return com.proto.account.Account.internal_static_MultiAccountRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.proto.account.AccountRequest.class, com.proto.account.AccountRequest.Builder.class);
     }
@@ -523,21 +333,13 @@ private static final long serialVersionUID = 0L;
         accountInfo_ = null;
         accountInfoBuilder_ = null;
       }
-      name_ = "";
-
-      type_ = "";
-
-      address_ = "";
-
-      age_ = 0;
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.proto.account.Account.internal_static_AccountRequest_descriptor;
+      return com.proto.account.Account.internal_static_MultiAccountRequest_descriptor;
     }
 
     @java.lang.Override
@@ -562,10 +364,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.accountInfo_ = accountInfoBuilder_.build();
       }
-      result.name_ = name_;
-      result.type_ = type_;
-      result.address_ = address_;
-      result.age_ = age_;
       onBuilt();
       return result;
     }
@@ -616,21 +414,6 @@ private static final long serialVersionUID = 0L;
       if (other == com.proto.account.AccountRequest.getDefaultInstance()) return this;
       if (other.hasAccountInfo()) {
         mergeAccountInfo(other.getAccountInfo());
-      }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
-      if (!other.getType().isEmpty()) {
-        type_ = other.type_;
-        onChanged();
-      }
-      if (!other.getAddress().isEmpty()) {
-        address_ = other.address_;
-        onChanged();
-      }
-      if (other.getAge() != 0) {
-        setAge(other.getAge());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -778,265 +561,6 @@ private static final long serialVersionUID = 0L;
         accountInfo_ = null;
       }
       return accountInfoBuilder_;
-    }
-
-    private java.lang.Object name_ = "";
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object type_ = "";
-    /**
-     * <code>string type = 3;</code>
-     * @return The type.
-     */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string type = 3;</code>
-     * @return The bytes for type.
-     */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string type = 3;</code>
-     * @param value The type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string type = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearType() {
-      
-      type_ = getDefaultInstance().getType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string type = 3;</code>
-     * @param value The bytes for type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      type_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object address_ = "";
-    /**
-     * <code>string address = 4;</code>
-     * @return The address.
-     */
-    public java.lang.String getAddress() {
-      java.lang.Object ref = address_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        address_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string address = 4;</code>
-     * @return The bytes for address.
-     */
-    public com.google.protobuf.ByteString
-        getAddressBytes() {
-      java.lang.Object ref = address_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        address_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string address = 4;</code>
-     * @param value The address to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAddress(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      address_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string address = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAddress() {
-      
-      address_ = getDefaultInstance().getAddress();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string address = 4;</code>
-     * @param value The bytes for address to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAddressBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      address_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int age_ ;
-    /**
-     * <code>int32 age = 5;</code>
-     * @return The age.
-     */
-    @java.lang.Override
-    public int getAge() {
-      return age_;
-    }
-    /**
-     * <code>int32 age = 5;</code>
-     * @param value The age to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAge(int value) {
-      
-      age_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 age = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAge() {
-      
-      age_ = 0;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -20,15 +20,15 @@ public final class Account {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_AccountInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AccountRequest_descriptor;
+    internal_static_MultiAccountRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AccountRequest_fieldAccessorTable;
+      internal_static_MultiAccountRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AccountResponse_descriptor;
+    internal_static_MultiAccountResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AccountResponse_fieldAccessorTable;
+      internal_static_MultiAccountResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -40,13 +40,12 @@ public final class Account {
     java.lang.String[] descriptorData = {
       "\n\025account/account.proto\"G\n\013AccountInfo\022\014" +
       "\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\017\n\007address\030\003 " +
-      "\001(\t\022\013\n\003age\030\004 \001(\005\"m\n\016AccountRequest\022!\n\013ac" +
-      "countInfo\030\001 \001(\0132\014.AccountInfo\022\014\n\004name\030\002 " +
-      "\001(\t\022\014\n\004type\030\003 \001(\t\022\017\n\007address\030\004 \001(\t\022\013\n\003ag" +
-      "e\030\005 \001(\005\"!\n\017AccountResponse\022\016\n\006Result\030\001 \001" +
-      "(\t2=\n\013OpenAccount\022.\n\007account\022\017.AccountRe" +
-      "quest\032\020.AccountResponse\"\000B\025\n\021com.proto.a" +
-      "ccountP\001b\006proto3"
+      "\001(\t\022\013\n\003age\030\004 \001(\005\"8\n\023MultiAccountRequest\022" +
+      "!\n\013accountInfo\030\001 \001(\0132\014.AccountInfo\"&\n\024Mu" +
+      "ltiAccountResponse\022\016\n\006Result\030\001 \001(\t2N\n\013Op" +
+      "enAccount\022?\n\014MultiAccount\022\024.MultiAccount" +
+      "Request\032\025.MultiAccountResponse\"\000(\001B\025\n\021co" +
+      "m.proto.accountP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -58,17 +57,17 @@ public final class Account {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AccountInfo_descriptor,
         new java.lang.String[] { "Name", "Type", "Address", "Age", });
-    internal_static_AccountRequest_descriptor =
+    internal_static_MultiAccountRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_AccountRequest_fieldAccessorTable = new
+    internal_static_MultiAccountRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AccountRequest_descriptor,
-        new java.lang.String[] { "AccountInfo", "Name", "Type", "Address", "Age", });
-    internal_static_AccountResponse_descriptor =
+        internal_static_MultiAccountRequest_descriptor,
+        new java.lang.String[] { "AccountInfo", });
+    internal_static_MultiAccountResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_AccountResponse_fieldAccessorTable = new
+    internal_static_MultiAccountResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AccountResponse_descriptor,
+        internal_static_MultiAccountResponse_descriptor,
         new java.lang.String[] { "Result", });
   }
 
